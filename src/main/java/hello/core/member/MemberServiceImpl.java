@@ -12,6 +12,7 @@ public class MemberServiceImpl implements MemberService {
         memberRepository.save( member );
 
         //save를 호출하게 되면 Override된게 호출이 된다.
+        //interface에서 추상적으로 구현해 놓은 메서드를 override된 구현체에서 메소드를 정의해 둔다.
 
     }
 
