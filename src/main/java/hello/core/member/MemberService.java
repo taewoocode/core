@@ -4,6 +4,8 @@ public interface MemberService {
     //2가지 기능
     //회원가입, 회원조회
 
+    // 인터페이스라서 추상적으로 메서드를 정의해 놓는다.
+
 
     void join(Member member); //회원가입
 
