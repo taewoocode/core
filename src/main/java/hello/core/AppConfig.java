@@ -11,6 +11,7 @@ public class AppConfig {
 
     public MemberService memberService() {
         return new MemberServiceImpl(new MemoryMemberRepository()); //생성자 주입
+        //appConfig객체는 memoryMemberRepository객체를 생성하고 그 참조값을 memberServiceImpl을 생성하면서 생성자로 전달한다.
     }
 
     public OrderService orderService() {
