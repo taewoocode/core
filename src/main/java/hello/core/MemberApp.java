@@ -8,7 +8,8 @@ import hello.core.member.MemberServiceImpl;
 public class MemberApp {
 
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService(); //appconfig에서 멤버서비스를 요청하면 인터페이스를 제공해준다.
         Member member = new Member( 1L, "memberA", Grade.VIP );// 조인, cmd + opt + v
         memberService.join( member ); // join
 
