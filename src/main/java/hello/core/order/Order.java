@@ -18,6 +18,7 @@ public class Order {
         return itemPrice - discountPrice;
     }
 
+
     //비즈니스
     public Long getMemberId() {
         return MemberId;

@@ -24,10 +24,7 @@ public class AppConfig {
         return new MemoryMemberRepository();
     }
 
-    public OrderService orderService() {
-        return new OrderServiceImpl( memberRepository(), discountPolicy()); //생성자 주입
 
-    }
 
     public DiscountPolicy discountPolicy() {
         //return new FixDiscountPolicy();
