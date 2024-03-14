@@ -12,15 +12,15 @@ public class MemberApp {
     public static void main(String[] args) {
 //        Member member = new Member( 1L, "memberA", Grade.VIP );// 조인, cmd + opt + v
 //        memberService.join( member ); // join
-
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
-        MemberService memberService = applicationContext.getBean( "memberService", MemberService.class ); // memberService 객체 조회, 타입
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext( AppConfig.class );
+        MemberService memberService = applicationContext.getBean( "memberService", MemberService.class );
 
         Member member = new Member( 1L, "memberA", Grade.VIP );
         memberService.join(member);
 
-        Member findMember = memberService.findMember( 1L );
-        System.out.println( "member = " + member.getName() ); // new member
-        System.out.println( "findMember = " + findMember.getName() ); // soutv
+        Member findmember = memberService.findMember( 1L );
+        System.out.println( "new member  = " + member.getName() );
+        System.out.println( "findmember = " + findmember.getName() );
+
     }
 }
