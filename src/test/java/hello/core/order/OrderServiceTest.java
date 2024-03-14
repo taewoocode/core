@@ -18,7 +18,7 @@ public class OrderServiceTest {
     void beforeEach() {
         AppConfig appConfig = new AppConfig(); // 만들고
         memberService = appConfig.memberService();// 할당하고
-        orderService = appConfig.orderService();
+     //   orderService = appConfig.orderService();
     }
 
     @Test
