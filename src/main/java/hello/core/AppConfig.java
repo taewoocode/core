@@ -18,7 +18,7 @@ public class AppConfig {
     Appconfig에서 모든 역할들을 담아냈다.
      */
     @Bean
-    public MemberService memberService() {
+    public MemberService memberService() { // 반환타입이 MemberService이다.
         return new MemberServiceImpl( memberRepository() ); //생성자 주입
         //appConfig객체는 memoryMemberRepository객체를 생성하고 그 참조값을 memberServiceImpl을 생성하면서 생성자로 전달한다.
     }

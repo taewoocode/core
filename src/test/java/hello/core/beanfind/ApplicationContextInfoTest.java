@@ -18,8 +18,6 @@ class ApplicationContextInfoTest {
             Object bean = ac.getBean( beanDefinitionName );
             System.out.println( "bean = " + beanDefinitionName + "obeject" + bean );
         }
-
-
     }
 
     @Test
@@ -29,13 +27,10 @@ class ApplicationContextInfoTest {
         for (String beanDefinitionName : beanDefinitionNames) {
             BeanDefinition beanDefinition = ac.getBeanDefinition( beanDefinitionName );//metadata 정보 꺼내기
 
-            //
             if (beanDefinition.getRole() == BeanDefinition.ROLE_APPLICATION) {
                 Object bean = ac.getBean( beanDefinitionName );
                 System.out.println( "bean = " + beanDefinitionName + "obeject" + bean );
             }
         }
-
-
     }
 }
