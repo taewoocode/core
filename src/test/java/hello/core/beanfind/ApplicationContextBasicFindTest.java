@@ -6,9 +6,11 @@ import hello.core.member.MemberServiceImpl;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import static org.assertj.core.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ApplicationContextBasicFindTest {
 
@@ -39,5 +41,17 @@ public class ApplicationContextBasicFindTest {
     void findBeanByName2() {
         MemberService memberService = ac.getBean( "memberService", MemberServiceImpl.class );
         assertThat( memberService ).isInstanceOf( MemberServiceImpl.class ); //static
+    }
+
+    //예외가 터져야 테스트가 통과한다.
+    /*
+    이 코드를 해석하면 화살표 기준 오른쪽에 있는 로직을 실행하면 왼쪽에 있는 예외가 터지면 성공, 터지지 않으면 실패
+     */
+    @Test
+    @DisplayName("빈 이름으로 조회")
+    void findByNameX() {
+        //ac.getBean을 했는데 ("xxxxx", MemberService.class);
+        assertThrows( NoSuchBeanDefinitionException.class,
+                () -> ac.getBean( "xxxxx", MemberService.class));
     }
 }
