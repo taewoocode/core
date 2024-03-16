@@ -51,6 +51,16 @@ public class ApplicationContextEntendsFindTest {
         assertThat( bean ).isInstanceOf( RateDiscountPolicy.class );
     }
 
+    @Test
+    @DisplayName("부모타입으로 모두 조회하기 - object")
+    void findAllBeanOfType() {
+        Map<String, Object> beansOfType = ac.getBeansOfType( Object.class );
+        for (String key : beansOfType.keySet()) {
+            System.out.println( "key = " + key + "value = " + beansOfType.get( key ) );
+
+        }
+    }
+
     @Configuration
     static class TestConfig {
 
