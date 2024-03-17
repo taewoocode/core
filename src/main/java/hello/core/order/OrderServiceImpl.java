@@ -36,4 +36,9 @@ public class OrderServiceImpl implements OrderService{
     /*
     주문 요청이 오면 회원정보를 먼저 조회를 하고, 할인 정책에다가 회원정보를 넘긴다. 그리고 최종 생성된 주문을 반환해준다.
      */
+
+    //test
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
+    }
 }
