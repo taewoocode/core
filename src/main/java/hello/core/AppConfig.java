@@ -19,16 +19,19 @@ public class AppConfig {
      */
     @Bean
     public MemberService memberService() { // 반환타입이 MemberService이다.
+        System.out.println( "call AppConfig.memberService" );
         return new MemberServiceImpl( memberRepository() ); //생성자 주입
         //appConfig객체는 memoryMemberRepository객체를 생성하고 그 참조값을 memberServiceImpl을 생성하면서 생성자로 전달한다.
     }
     @Bean
     private static MemoryMemberRepository memberRepository() {
+        System.out.println( "call AppConfig.memberRepository" );
         return new MemoryMemberRepository();
     }
 
     @Bean
     public DiscountPolicy discountPolicy() {
+        System.out.println( "call AppConfig.discountPolicy" );
         //return new FixDiscountPolicy();
         return new RateDiscountPolicy();
     }
