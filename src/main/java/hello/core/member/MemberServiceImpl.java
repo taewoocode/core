@@ -3,7 +3,7 @@ package hello.core.member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("memberService2")
 public class MemberServiceImpl implements MemberService {
 
     // Impl이라고 클래스를 만들어준 이유는 구현체가 하나만 있을 경우에는 Impl이라고 관례상 많이 적어준다.
