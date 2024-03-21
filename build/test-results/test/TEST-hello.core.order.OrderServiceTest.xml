@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="hello.core.order.OrderServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-03-12T15:12:26" hostname="taewoo" time="0.0">
+  <properties/>
+  <testcase name="createOrder()" classname="hello.core.order.OrderServiceTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

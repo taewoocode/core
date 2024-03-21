@@ -3,35 +3,32 @@ package hello.core.member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component("memberService2")
+@Component //Spring Bean으로 등록
 public class MemberServiceImpl implements MemberService {
-
-    // Impl이라고 클래스를 만들어준 이유는 구현체가 하나만 있을 경우에는 Impl이라고 관례상 많이 적어준다.
 
     private final MemberRepository memberRepository;
 
-    @Autowired
+    /*
+    ComponentScan을 사용하게 되면 자동적으로 AutoWired를 사용하게 된다.
+     */
+    @Autowired //생성자에 AutoWired를 붙여주면 타입에 맞는 애를 찾아와서 의존관계 주입을 자동으로 연결해서 주입한다.
     public MemberServiceImpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
 
+
     @Override
     public void join(Member member) {
         memberRepository.save( member );
-
-        //save를 호출하게 되면 Override된게 호출이 된다.
-        //interface에서 추상적으로 구현해 놓은 메서드를 override된 구현체에서 메소드를 정의해 둔다.
-
     }
 
     @Override
     public Member findMember(Long memberId) {
-        return memberRepository.findByid( memberId );
-
+        return memberRepository.findById( memberId );
     }
 
-    //test
-    public MemberRepository getMemberRepository() {
+    //테스트 용도
+    public MemberRepository memberRepository() {
         return memberRepository;
     }
 }
